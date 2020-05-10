@@ -32,4 +32,15 @@ Get the latest sample code from GitHub using Git or download the repository as a
 
 ## Licensing
 
+```Java
+Timber.plant(new Timber.DebugTree() {
+    @Override
+    protected String createStackElementTag(@NonNull StackTraceElement element) {
+        return String.format("%s @ (Line no. %s) ::",
+                super.createStackElementTag(element),
+                element.getLineNumber());
+    }
+});
+```
+
 * See [LICENSE](LICENSE)
